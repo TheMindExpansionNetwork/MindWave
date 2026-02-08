@@ -1,0 +1,39 @@
+# MindWave Nightly Build - OpenClaw Cron Jobs
+# Add these to your OpenClaw cron configuration
+
+jobs:
+  # 11 PM: Start LoRA training
+  mindwave-training:
+    enabled: true
+    schedule:
+      kind: cron
+      expr: "0 23 * * *"
+      tz: "America/Los_Angeles"
+    payload:
+      kind: systemEvent
+      text: "🌙 NIGHT SHIFT: Starting MindWave LoRA training pipeline. Processing queue, training models, generating samples. Check /home/ubuntu/clawd/skills/MindWave/logs/ for progress."
+    sessionTarget: main
+    
+  # 4 AM: Generate test samples
+  mindwave-samples:
+    enabled: true
+    schedule:
+      kind: cron
+      expr: "0 4 * * *"
+      tz: "America/Los_Angeles"
+    payload:
+      kind: systemEvent
+      text: "🎵 NIGHT SHIFT: Generating MindWave test samples with new LoRA models. Testing all trained models against base prompts."
+    sessionTarget: main
+    
+  # 7 AM: Morning report
+  mindwave-report:
+    enabled: true
+    schedule:
+      kind: cron
+      expr: "0 7 * * *"
+      tz: "America/Los_Angeles"
+    payload:
+      kind: systemEvent
+      text: "📊 MORNING REPORT: MindWave overnight summary. Check training results, new models, sample generations. Report to Mind."
+    sessionTarget: main
