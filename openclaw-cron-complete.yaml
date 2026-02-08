@@ -1,0 +1,85 @@
+# MindWave Complete Automation - OpenClaw Cron Jobs
+# Add these to your OpenClaw cron configuration
+
+jobs:
+  # Every 5 minutes: Health check all services
+  mindwave-health-check:
+    enabled: true
+    schedule:
+      kind: cron
+      expr: "*/5 * * * *"
+    payload:
+      kind: systemEvent
+      text: "🔍 Health check: Verify ACE-Step API and ComfyUI are running. Restart if needed. Run /home/ubuntu/clawd/skills/MindWave/scripts/health-monitor.sh"
+    sessionTarget: main
+    
+  # 11 PM: Start LoRA training
+  mindwave-training:
+    enabled: true
+    schedule:
+      kind: cron
+      expr: "0 23 * * *"
+      tz: "America/Los_Angeles"
+    payload:
+      kind: systemEvent
+      text: "🌙 NIGHT SHIFT: Starting MindWave LoRA training. Process queue, train models. Log to /home/ubuntu/clawd/skills/MindWave/logs/training.log"
+    sessionTarget: main
+    
+  # 2 AM: Update ComfyUI models
+  mindwave-comfyui-update:
+    enabled: true
+    schedule:
+      kind: cron
+      expr: "0 2 * * *"
+      tz: "America/Los_Angeles"
+    payload:
+      kind: systemEvent
+      text: "🎨 NIGHT SHIFT: Update ComfyUI models and workflows. Check for new checkpoints."
+    sessionTarget: main
+    
+  # 4 AM: Generate test samples
+  mindwave-samples:
+    enabled: true
+    schedule:
+      kind: cron
+      expr: "0 4 * * *"
+      tz: "America/Los_Angeles"
+    payload:
+      kind: systemEvent
+      text: "🎵 NIGHT SHIFT: Generate test samples with new LoRA models. Test all models against base prompts."
+    sessionTarget: main
+    
+  # 6 AM: Backup data
+  mindwave-backup:
+    enabled: true
+    schedule:
+      kind: cron
+      expr: "0 6 * * *"
+      tz: "America/Los_Angeles"
+    payload:
+      kind: systemEvent
+      text: "💾 NIGHT SHIFT: Backup database, generated music, LoRA models, and datasets. Upload to cloud if configured."
+    sessionTarget: main
+    
+  # 7 AM: Morning report
+  mindwave-report:
+    enabled: true
+    schedule:
+      kind: cron
+      expr: "0 7 * * *"
+      tz: "America/Los_Angeles"
+    payload:
+      kind: systemEvent
+      text: "📊 MORNING REPORT: Send MindWave overnight summary to Mind. Include new models, samples generated, any issues."
+    sessionTarget: main
+    
+  # Every hour: Check disk space
+  mindwave-disk-check:
+    enabled: true
+    schedule:
+      kind: cron
+      expr: "0 * * * *"
+    payload:
+      kind: systemEvent
+      text: "💽 Check disk space. If >85% full, clean up old outputs and logs."
+    sessionTarget: main
