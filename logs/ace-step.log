@@ -1,0 +1,182 @@
+Downloading cpython-3.11.14-linux-x86_64-gnu (download) (29.8MiB)
+ Downloaded cpython-3.11.14-linux-x86_64-gnu (download)
+Using CPython 3.11.14
+Creating virtual environment at: .venv
+   Building ace-step @ file:///home/ubuntu/clawd/skills/ACE-Step-1.5
+Downloading torch (874.3MiB)
+Downloading nvidia-cublas-cu12 (566.8MiB)
+Downloading brotli (1.4MiB)
+Downloading setuptools (1.0MiB)
+Downloading soundfile (1.3MiB)
+Downloading scipy (33.5MiB)
+Downloading nvidia-cusparselt-cu12 (273.9MiB)
+Downloading uvloop (3.6MiB)
+Downloading sympy (6.0MiB)
+Downloading networkx (2.0MiB)
+Downloading pydantic-core (2.0MiB)
+Downloading fonttools (4.8MiB)
+Downloading kiwisolver (1.4MiB)
+Downloading llvmlite (53.7MiB)
+Downloading pillow (6.7MiB)
+Downloading torchcodec (2.0MiB)
+Downloading grpcio (6.4MiB)
+Downloading torchao (6.8MiB)
+Downloading tensorboard (5.3MiB)
+Downloading nvidia-curand-cu12 (60.7MiB)
+Downloading numba (3.6MiB)
+Downloading nvidia-cusparse-cu12 (274.9MiB)
+Downloading nvidia-cuda-cupti-cu12 (9.8MiB)
+Downloading diffusers (4.4MiB)
+Downloading tokenizers (3.1MiB)
+Downloading numpy (16.1MiB)
+Downloading tensorboard-data-server (6.3MiB)
+Downloading modelscope (5.8MiB)
+Downloading nvidia-cuda-nvrtc-cu12 (84.0MiB)
+Downloading gradio (21.9MiB)
+Downloading cuda-bindings (11.6MiB)
+Downloading transformers (11.4MiB)
+Downloading nvidia-cufft-cu12 (184.2MiB)
+Downloading triton (179.5MiB)
+Downloading aiohttp (1.7MiB)
+Downloading nvidia-nccl-cu12 (307.4MiB)
+Downloading nvidia-cusolver-cu12 (255.1MiB)
+Downloading matplotlib (8.3MiB)
+Downloading nvidia-cufile-cu12 (1.1MiB)
+Downloading hf-xet (3.2MiB)
+Downloading pandas (12.2MiB)
+Downloading torchvision (7.7MiB)
+Downloading torchaudio (1.8MiB)
+Downloading nvidia-nvjitlink-cu12 (37.4MiB)
+Downloading nvidia-nvshmem-cu12 (132.7MiB)
+Downloading nvidia-cudnn-cu12 (674.0MiB)
+ Downloaded torchaudio
+ Downloaded nvidia-cufile-cu12
+ Downloaded soundfile
+ Downloaded torchvision
+ Downloaded brotli
+ Downloaded kiwisolver
+ Downloaded aiohttp
+      Built ace-step @ file:///home/ubuntu/clawd/skills/ACE-Step-1.5
+ Downloaded pydantic-core
+ Downloaded torchcodec
+ Downloaded setuptools
+Downloading pygments (1.2MiB)
+ Downloaded tokenizers
+ Downloaded networkx
+ Downloaded hf-xet
+ Downloaded uvloop
+ Downloaded numba
+ Downloaded diffusers
+ Downloaded pygments
+ Downloaded fonttools
+ Downloaded tensorboard
+ Downloaded tensorboard-data-server
+ Downloaded grpcio
+ Downloaded pillow
+ Downloaded sympy
+ Downloaded torchao
+ Downloaded matplotlib
+ Downloaded nvidia-cuda-cupti-cu12
+ Downloaded cuda-bindings
+ Downloaded transformers
+ Downloaded numpy
+ Downloaded pandas
+ Downloaded modelscope
+ Downloaded nvidia-nvjitlink-cu12
+ Downloaded scipy
+ Downloaded gradio
+ Downloaded llvmlite
+ Downloaded nvidia-curand-cu12
+ Downloaded nvidia-cuda-nvrtc-cu12
+ Downloaded nvidia-nvshmem-cu12
+ Downloaded nvidia-cufft-cu12
+ Downloaded nvidia-cusolver-cu12
+ Downloaded nvidia-cusparse-cu12
+ Downloaded triton
+ Downloaded nvidia-nccl-cu12
+ Downloaded nvidia-cusparselt-cu12
+ Downloaded nvidia-cublas-cu12
+ Downloaded nvidia-cudnn-cu12
+ Downloaded torch
+Installed 135 packages in 12.37s
+Skipping import of cpp extensions due to incompatible torch version 2.10.0+cu128 for torchao version 0.15.0             Please see https://github.com/pytorch/ao/issues/2919 for more info
+/home/ubuntu/clawd/skills/ACE-Step-1.5/.venv/lib/python3.11/site-packages/diffusers/models/transformers/transformer_kandinsky.py:168: UserWarning: CUDA is not available or torch_xla is imported. Disabling autocast.
+  @torch.autocast(device_type="cuda", dtype=torch.float32)
+/home/ubuntu/clawd/skills/ACE-Step-1.5/.venv/lib/python3.11/site-packages/diffusers/models/transformers/transformer_kandinsky.py:272: UserWarning: CUDA is not available or torch_xla is imported. Disabling autocast.
+  @torch.autocast(device_type="cuda", dtype=torch.float32)
+INFO:     Started server process [2181018]
+INFO:     Waiting for application startup.
+ERROR:    Traceback (most recent call last):
+  File "/home/ubuntu/clawd/skills/ACE-Step-1.5/.venv/lib/python3.11/site-packages/starlette/routing.py", line 694, in lifespan
+    async with self.lifespan_context(app) as maybe_state:
+  File "/home/ubuntu/.local/share/uv/python/cpython-3.11.14-linux-x86_64-gnu/lib/python3.11/contextlib.py", line 210, in __aenter__
+    return await anext(self.gen)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ubuntu/clawd/skills/ACE-Step-1.5/.venv/lib/python3.11/site-packages/fastapi/routing.py", line 203, in merged_lifespan
+    async with original_context(app) as maybe_original_state:
+  File "/home/ubuntu/.local/share/uv/python/cpython-3.11.14-linux-x86_64-gnu/lib/python3.11/contextlib.py", line 210, in __aenter__
+    return await anext(self.gen)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ubuntu/clawd/skills/ACE-Step-1.5/acestep/api_server.py", line 1003, in lifespan
+    llm_handler = LLMHandler()
+                  ^^^^^^^^^^^^
+  File "/home/ubuntu/clawd/skills/ACE-Step-1.5/acestep/llm_inference.py", line 59, in __init__
+    self.disable_tqdm = os.environ.get("ACESTEP_DISABLE_TQDM", "").lower() in ("1", "true", "yes") or not sys.stderr.isatty()
+                                                                                                          ^^^^^^^^^^^^^^^^^
+AttributeError: 'StderrLogger' object has no attribute 'isatty'
+
+ERROR:    Application startup failed. Exiting.
+Skipping import of cpp extensions due to incompatible torch version 2.10.0+cu128 for torchao version 0.15.0             Please see https://github.com/pytorch/ao/issues/2919 for more info
+/home/ubuntu/clawd/skills/ACE-Step-1.5/.venv/lib/python3.11/site-packages/diffusers/models/transformers/transformer_kandinsky.py:168: UserWarning: CUDA is not available or torch_xla is imported. Disabling autocast.
+  @torch.autocast(device_type="cuda", dtype=torch.float32)
+/home/ubuntu/clawd/skills/ACE-Step-1.5/.venv/lib/python3.11/site-packages/diffusers/models/transformers/transformer_kandinsky.py:272: UserWarning: CUDA is not available or torch_xla is imported. Disabling autocast.
+  @torch.autocast(device_type="cuda", dtype=torch.float32)
+INFO:     Started server process [2181330]
+INFO:     Waiting for application startup.
+ERROR:    Traceback (most recent call last):
+  File "/home/ubuntu/clawd/skills/ACE-Step-1.5/.venv/lib/python3.11/site-packages/starlette/routing.py", line 694, in lifespan
+    async with self.lifespan_context(app) as maybe_state:
+  File "/home/ubuntu/.local/share/uv/python/cpython-3.11.14-linux-x86_64-gnu/lib/python3.11/contextlib.py", line 210, in __aenter__
+    return await anext(self.gen)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ubuntu/clawd/skills/ACE-Step-1.5/.venv/lib/python3.11/site-packages/fastapi/routing.py", line 203, in merged_lifespan
+    async with original_context(app) as maybe_original_state:
+  File "/home/ubuntu/.local/share/uv/python/cpython-3.11.14-linux-x86_64-gnu/lib/python3.11/contextlib.py", line 210, in __aenter__
+    return await anext(self.gen)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ubuntu/clawd/skills/ACE-Step-1.5/acestep/api_server.py", line 1003, in lifespan
+    llm_handler = LLMHandler()
+                  ^^^^^^^^^^^^
+  File "/home/ubuntu/clawd/skills/ACE-Step-1.5/acestep/llm_inference.py", line 59, in __init__
+    self.disable_tqdm = os.environ.get("ACESTEP_DISABLE_TQDM", "").lower() in ("1", "true", "yes") or not sys.stderr.isatty()
+                                                                                                          ^^^^^^^^^^^^^^^^^
+AttributeError: 'StderrLogger' object has no attribute 'isatty'
+
+ERROR:    Application startup failed. Exiting.
+Skipping import of cpp extensions due to incompatible torch version 2.10.0+cu128 for torchao version 0.15.0             Please see https://github.com/pytorch/ao/issues/2919 for more info
+/home/ubuntu/clawd/skills/ACE-Step-1.5/.venv/lib/python3.11/site-packages/diffusers/models/transformers/transformer_kandinsky.py:168: UserWarning: CUDA is not available or torch_xla is imported. Disabling autocast.
+  @torch.autocast(device_type="cuda", dtype=torch.float32)
+/home/ubuntu/clawd/skills/ACE-Step-1.5/.venv/lib/python3.11/site-packages/diffusers/models/transformers/transformer_kandinsky.py:272: UserWarning: CUDA is not available or torch_xla is imported. Disabling autocast.
+  @torch.autocast(device_type="cuda", dtype=torch.float32)
+INFO:     Started server process [2182499]
+INFO:     Waiting for application startup.
+ERROR:    Traceback (most recent call last):
+  File "/home/ubuntu/clawd/skills/ACE-Step-1.5/.venv/lib/python3.11/site-packages/starlette/routing.py", line 694, in lifespan
+    async with self.lifespan_context(app) as maybe_state:
+  File "/home/ubuntu/.local/share/uv/python/cpython-3.11.14-linux-x86_64-gnu/lib/python3.11/contextlib.py", line 210, in __aenter__
+    return await anext(self.gen)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ubuntu/clawd/skills/ACE-Step-1.5/.venv/lib/python3.11/site-packages/fastapi/routing.py", line 203, in merged_lifespan
+    async with original_context(app) as maybe_original_state:
+  File "/home/ubuntu/.local/share/uv/python/cpython-3.11.14-linux-x86_64-gnu/lib/python3.11/contextlib.py", line 210, in __aenter__
+    return await anext(self.gen)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ubuntu/clawd/skills/ACE-Step-1.5/acestep/api_server.py", line 1003, in lifespan
+    llm_handler = LLMHandler()
+                  ^^^^^^^^^^^^
+  File "/home/ubuntu/clawd/skills/ACE-Step-1.5/acestep/llm_inference.py", line 59, in __init__
+    self.disable_tqdm = os.environ.get("ACESTEP_DISABLE_TQDM", "").lower() in ("1", "true", "yes") or not sys.stderr.isatty()
+                                                                                                          ^^^^^^^^^^^^^^^^^
+AttributeError: 'StderrLogger' object has no attribute 'isatty'
+
+ERROR:    Application startup failed. Exiting.
